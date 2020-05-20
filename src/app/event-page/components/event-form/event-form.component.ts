@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-event-form',
   templateUrl: './event-form.component.html',
-  styleUrls: ['./event-form.component.scss']
+  styleUrls: ['./event-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EventFormComponent implements OnInit {
+export class EventFormComponent {
 
-  constructor() { }
+  @Input() eventForm: FormGroup;
 
-  ngOnInit(): void {
+  constructor() {
   }
-
 }

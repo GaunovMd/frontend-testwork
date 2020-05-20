@@ -15,6 +15,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { effects } from '../shared/store/effects';
 import { reducers } from '../shared/store/reducers';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { reducers } from '../shared/store/reducers';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RootRoutingModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),

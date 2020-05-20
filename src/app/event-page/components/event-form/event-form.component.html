@@ -1,2 +1,41 @@
-<p>add-event-form works!</p>
-<app-my-button></app-my-button>
+<form [formGroup]="eventForm" class="event-form">
+  <div class="form">
+    <div class="form-input">
+      <div class="title">
+        Event Name
+        <span *ngIf="eventForm.get('name').invalid && (eventForm.get('name').dirty || eventForm.get('name').touched)"
+          class="alert">
+          Event Name is required
+        </span>
+      </div>
+      <input formControlName="name" type="text">
+    </div>
+    <div class="form-input">
+      <div class="title">
+        Address
+        <span
+          *ngIf="eventForm.get('address').invalid && (eventForm.get('address').dirty || eventForm.get('address').touched)"
+          class="alert">
+          Address is required
+        </span>
+      </div>
+      <input formControlName="address" type="text">
+    </div>
+    <div class="form-input">
+      <div class="title">
+        Date
+        <span *ngIf="eventForm.get('date').invalid && (eventForm.get('date').dirty || eventForm.get('date').touched)"
+          class="alert">
+          Date is required
+        </span>
+      </div>
+      <input formControlName="date" type="date">
+    </div>
+  </div>
+  <div class="preview-container">
+    <div id="top" class="preview">
+      <div class="preview-title">Preview</div>
+      <app-event-card [cardData]="eventForm.value" [isPreviewMode]="true"></app-event-card>
+    </div>
+  </div>
+</form>

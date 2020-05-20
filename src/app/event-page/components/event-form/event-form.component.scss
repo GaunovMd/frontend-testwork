@@ -1,0 +1,48 @@
+@import "../../../shared/styles/variables.scss";
+
+.event-form {
+  display: flex;
+
+  .form {
+    flex: 50%;
+
+    .form-input {
+      margin: 15px 0;
+
+      .title {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+
+        .alert {
+          color: $my-coral;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 30px;
+
+        border: none;
+        background-color: $my-grey;
+      }
+    }
+  }
+
+  .preview-container {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .preview {
+      display: inline-block;
+
+      .preview-title {
+        margin: 0 18px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+}
