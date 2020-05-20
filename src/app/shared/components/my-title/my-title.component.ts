@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-my-title',
   templateUrl: './my-title.component.html',
-  styleUrls: ['./my-title.component.scss']
+  styleUrls: ['./my-title.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MyTitleComponent implements OnInit {
+export class MyTitleComponent {
 
-  constructor() { }
+  @Input() titleText: string;
+  @Input() isHaveBackButton = false;
 
-  ngOnInit(): void {
+  constructor(private location: Location) {
   }
 
+  onClickBack() {
+    this.location.back();
+  }
 }

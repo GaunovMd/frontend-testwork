@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.top-title {
+  display: flex;
+  margin: 20px;
+  width: 100%;
+  align-items: center;
+
+  z-index: $header-index;
+
+  .title-arrow {
+    cursor: pointer;
+    font-size: 40px;
+  }
+
+  .title-text {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: $my-font;
+  }
+}
