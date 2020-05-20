@@ -1,14 +1,20 @@
 import { IEventCard } from './event-card.interface';
 
-export interface IStateUI {
-    isHomeLoading: boolean;
+export const rootStateKey = 'root';
+
+export interface IRootSlice {
+  [rootStateKey]: IRootState;
 }
 
-export interface IStateData {
-    eventCards: IEventCard[];
+export interface IRootUIState {
+  isHomeLoading: boolean;
 }
 
-export interface IState {
-    ui: IStateUI;
-    data: IStateData;
+export interface IRootDataState {
+  eventCards: IEventCard[];
+}
+
+export interface IRootState {
+  ui: IRootUIState;
+  data: IRootDataState;
 }

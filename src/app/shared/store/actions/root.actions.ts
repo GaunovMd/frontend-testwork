@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { IEventCard } from '../../interfaces/event-card.interface';
 
 export enum RootActionTypes {
@@ -7,20 +7,13 @@ export enum RootActionTypes {
   HomePageEnterFailed = '[Home Page] Home Page Enter Failed',
 }
 
-export class HomePageEnterAction implements Action {
-  readonly type: string = RootActionTypes.HomePageEnter;
-}
+export const homePageEnterAction =
+  createAction(RootActionTypes.HomePageEnter);
 
-export class HomePageEnterActionComplete implements Action {
-  readonly type: string = RootActionTypes.HomePageEnter;
-  constructor(public payload: IEventCard[]) { }
-}
+export const homePageEnterActionComplete = createAction(
+  RootActionTypes.HomePageEnterComplete,
+  props<{ objects: IEventCard[] }>(),
+);
 
-export class HomePageEnterActionFailed implements Action {
-  readonly type: string = RootActionTypes.HomePageEnter;
-}
-
-export type RootActions =
-  | HomePageEnterAction
-  | HomePageEnterActionComplete
-  | HomePageEnterActionFailed;
+export const homePageEnterActionFailed =
+  createAction(RootActionTypes.HomePageEnterFailed);

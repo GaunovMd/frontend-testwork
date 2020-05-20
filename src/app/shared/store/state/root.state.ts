@@ -1,10 +1,10 @@
-import { IState } from '../../interfaces/state.interface';
+import { IRootState } from '../../interfaces/state.interface';
 
-export const initialState: IState = {
-    ui: {
-        isHomeLoading: false,
-    },
-    data: {
-        eventCards: [],
-    }
+export const initialState: IRootState = {
+  ui: {
+    isHomeLoading: false,
+  },
+  data: {
+    eventCards: [],
+  }
 }

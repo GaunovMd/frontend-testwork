@@ -1,52 +1,36 @@
-import { Action, Store } from 'ngrx-actions';
+import { set } from 'monolite';
 import { initialState } from '../state/root.state';
-import {
-  HomePageEnterAction,
-  HomePageEnterActionComplete,
-  HomePageEnterActionFailed,
-} from '../actions/root.actions';
-import { IState } from '../../interfaces/state.interface';
+import { IRootState } from '../../interfaces/state.interface';
+import { Action, createReducer, on } from '@ngrx/store';
+import { homePageEnterAction, homePageEnterActionComplete, homePageEnterActionFailed } from '../actions/root.actions';
+import { IEventCard } from '../../interfaces/event-card.interface';
 
-@Store(initialState)
-export class RootState {
-
-  @Action(HomePageEnterAction)
-  homePageEnterAction(state: IState): IState {
-    return {
-      ...state,
-      ui: {
-        ...state.ui,
-        isHomeLoading: true,
-      }
-    };
-  }
-
-  @Action(HomePageEnterActionComplete)
-  homePageEnterActionComplete(
-    state: IState,
-    action: HomePageEnterActionComplete,
-  ): IState {
-    return {
-      ...state,
-      ui: {
-        ...state.ui,
-        isHomeLoading: true,
-      },
-      data: {
-        ...state.data,
-        eventCards: action.payload,
-      }
-    }
-  }
-
-  @Action(HomePageEnterActionFailed)
-  homePageEnterActionFailed(state: IState): IState {
-    return {
-      ...state,
-      ui: {
-        ...state.ui,
-        isHomeLoading: false,
-      }
-    };
-  }
+export function rootReducer(state: IRootState | undefined, action: Action): IRootState {
+  return reducer(state, action);
 }
+
+const reducer = createReducer<IRootState>(
+  initialState,
+
+  on(
+    homePageEnterAction,
+    oldState => set(oldState)
+      .set(state => state.ui.isHomeLoading, true)
+      .end(),
+  ),
+
+  on(
+    homePageEnterActionComplete,
+    (oldState, eventCards: { objects: IEventCard[]}) => set(oldState)
+      .set(state => state.data.eventCards, eventCards.objects)
+      .set(state => state.ui.isHomeLoading, false)
+      .end(),
+  ),
+
+  on(
+    homePageEnterActionFailed,
+    oldState => set(oldState)
+      .set(state => state.ui.isHomeLoading, false)
+      .end(),
+  ),
+);
