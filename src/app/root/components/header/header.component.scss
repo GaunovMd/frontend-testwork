@@ -1,0 +1,28 @@
+@import "../../../shared/styles/variables.scss";
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+
+  background: $my-grey;
+  z-index: $header-index;
+
+  .logo {
+    margin: 0 30px;
+    font-size: 40px;
+  }
+  
+  .control {
+    color: $my-dark-grey;
+    font-family: $my-font;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+
+    &.active {
+      color: $my-black;
+    }
+  }
+}
