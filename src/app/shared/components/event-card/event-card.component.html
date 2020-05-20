@@ -1,5 +1,5 @@
 <div class="card-body">
-    <div class="card-button" *ngIf="isButton" type="button">
+    <div (click)="handleAddNewCardClick()" class="card-button" *ngIf="isButton" type="button">
         <div>
             <span class="material-icons card-button-icon">
                 add
@@ -7,7 +7,7 @@
             <div>Add more</div>
         </div>
     </div>
-    <div class="card-info" *ngIf="!isButton">
+    <div (click)="handleEditCardClick()" class="card-info" *ngIf="!isButton">
         <img class="card-img" src="https://ngrx.io/assets/images/badge.svg" alt="">
         <div class="card-info-container">
             <div class="card-name">

@@ -15,4 +15,11 @@ export class EventCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleAddNewCardClick(): void {
+  console.log(' : EventCardComponent -> handleAddNewCardClick -> void');
+  }
+
+  handleEditCardClick(): void {
+  console.log(' : EventCardComponent -> handleEditCardClick -> void');
+  }
 }

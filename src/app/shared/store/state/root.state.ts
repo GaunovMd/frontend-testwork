@@ -2,7 +2,13 @@ import { IRootState } from '../../interfaces/state.interface';
 
 export const initialState: IRootState = {
   ui: {
-    isHomeLoading: false,
+    homePageUI: {
+      isLoading: false,
+
+    },
+    eventPageUI: {
+      isLoading: false,
+    }
   },
   data: {
     eventCards: [],

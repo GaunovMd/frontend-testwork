@@ -6,8 +6,17 @@ export interface IRootSlice {
   [rootStateKey]: IRootState;
 }
 
+export interface IEventPageUI {
+  isLoading: boolean;
+}
+
+export interface IHomePageUI {
+  isLoading: boolean;
+}
+
 export interface IRootUIState {
-  isHomeLoading: boolean;
+  homePageUI: IHomePageUI;
+  eventPageUI: IEventPageUI;
 }
 
 export interface IRootDataState {

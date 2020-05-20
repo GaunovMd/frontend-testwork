@@ -1,9 +1,9 @@
 <app-my-title [titleText]="'Home'"></app-my-title>
 <div class="home-page-body">
-    <div class="spinner" *ngIf="(isHomeLoading$ | async)">
+    <div class="spinner" *ngIf="(isLoading$ | async)">
         <mat-spinner></mat-spinner>
     </div>
-    <div class="cards-container" *ngIf="!(isHomeLoading$ | async)">
+    <div class="cards-container" *ngIf="!(isLoading$ | async)">
         <ng-container *ngFor="let card of (eventCards$ | async)">
             <app-event-card></app-event-card>
         </ng-container>

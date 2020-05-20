@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IEventCard } from '../shared/interfaces/event-card.interface';
 import { IAppState } from '../shared/store/reducers';
-import { selectEventCards, selectIsHomeLoading, selectIsEventCardsExist } from '../shared/store/selectors/root.selectors';
+import { selectEventCards, selectIsHistoryPageLoading, selectIsEventCardsExist } from '../shared/store/selectors/root.selectors';
 import { homePageEnterAction } from '../shared/store/actions/root.actions';
 
 @Component({
@@ -14,7 +14,7 @@ import { homePageEnterAction } from '../shared/store/actions/root.actions';
 export class HomePageComponent implements OnInit {
 
   eventCards$: Observable<IEventCard[]> = this.store.select(selectEventCards);
-  isHomeLoading$: Observable<boolean> = this.store.select(selectIsHomeLoading);
+  isLoading$: Observable<boolean> = this.store.select(selectIsHistoryPageLoading);
   adsd = this.store.select(selectIsEventCardsExist);
 
   constructor(private store: Store<IAppState>) {}
