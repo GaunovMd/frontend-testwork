@@ -1,1 +1,26 @@
-<p>event-card works!</p>
+<div class="card-body">
+    <div class="card-button" *ngIf="isButton" type="button">
+        <div>
+            <span class="material-icons card-button-icon">
+                add
+            </span>
+            <div>Add more</div>
+        </div>
+    </div>
+    <div class="card-info" *ngIf="!isButton">
+        <img class="card-img" src="https://ngrx.io/assets/images/badge.svg" alt="">
+        <div class="card-info-container">
+            <div class="card-name">
+                qweqwe
+            </div>
+            <div class="card-bottom-info">
+                <div class="location">
+                    asd
+                </div>
+                <div class="date">
+                    123
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
