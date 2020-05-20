@@ -1,4 +1,4 @@
-<div class="card-body">
+<div [ngClass]="{preview: isPreviewMode}" class="card-body">
     <div (click)="handleAddNewCardClick()" class="card-button" *ngIf="isButton" type="button">
         <div>
             <span class="material-icons card-button-icon">

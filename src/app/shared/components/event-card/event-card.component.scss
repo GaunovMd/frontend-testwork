@@ -9,6 +9,10 @@
   cursor: pointer;
   background-color: $my-grey;
 
+  &.preview{
+    cursor: inherit;
+  }
+
   .card-button {
     display: flex;
     justify-content: center;
