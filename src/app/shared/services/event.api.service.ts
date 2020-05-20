@@ -6,7 +6,17 @@ import { IEventCard } from '../interfaces/event-card.interface';
 export class EventApiService {
   getAllEvents(): Observable<IEventCard[]> {
     return new Observable(subscriber => {
-      setTimeout(() => subscriber.next([{name: '1'},{name: '2'}]), 3000)
+      setTimeout(() => subscriber.next([{
+        name: '1',
+        address: 'qew',
+        date: new Date,
+        img: '',
+      },{
+        name: '2',
+        address: 'asd',
+        date: new Date,
+        img: '',
+      }]), 3000);
     });
   }
 }

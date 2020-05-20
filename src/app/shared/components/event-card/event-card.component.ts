@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { IEventCard } from '../../interfaces/event-card.interface';
+import { monthNames } from '../../constants/month.constant';
 
 @Component({
   selector: 'app-event-card',
@@ -6,20 +8,30 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
   styleUrls: ['./event-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EventCardComponent implements OnInit {
+export class EventCardComponent {
 
+  @Input() cardData: IEventCard;
   @Input() isButton = false;
+  @Input() isPreviewMode = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  getHumanDate(date: Date): string {
+    if (date) {
+      const eventDate = new Date(date);
+      return `${eventDate.getDate()} ${monthNames[eventDate.getMonth() + 1]}`;
+    }
+    return '';
   }
 
   handleAddNewCardClick(): void {
-  console.log(' : EventCardComponent -> handleAddNewCardClick -> void');
+    window.location.href = '/add-event';
   }
 
-  handleEditCardClick(): void {
-  console.log(' : EventCardComponent -> handleEditCardClick -> void');
+  handleCardClick(): void {
+    if (this.isPreviewMode) {
+      return;
+    }
+    console.log(' : EventCardComponent -> handleEditCardClick -> void');
   }
 }

@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 .card-body {
+  position: relative;
   width: 177px;
   height: 212px;
   margin: 18px;
@@ -28,7 +29,6 @@
 
   .card-info {
     display: block;
-    position: relative;
     width: 100%;
     height: 100%;
 

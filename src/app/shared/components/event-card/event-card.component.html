@@ -7,18 +7,18 @@
             <div>Add more</div>
         </div>
     </div>
-    <div (click)="handleEditCardClick()" class="card-info" *ngIf="!isButton">
+    <div (click)="handleCardClick()" class="card-info" *ngIf="!isButton">
         <img class="card-img" src="https://ngrx.io/assets/images/badge.svg" alt="">
         <div class="card-info-container">
             <div class="card-name">
-                qweqwe
+                {{cardData.name}}
             </div>
             <div class="card-bottom-info">
                 <div class="location">
-                    asd
+                    {{cardData.address}}
                 </div>
                 <div class="date">
-                    123
+                    {{getHumanDate(cardData.date)}}
                 </div>
             </div>
         </div>

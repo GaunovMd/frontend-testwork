@@ -5,7 +5,7 @@
     </div>
     <div class="cards-container" *ngIf="!(isLoading$ | async)">
         <ng-container *ngFor="let card of (eventCards$ | async)">
-            <app-event-card></app-event-card>
+            <app-event-card [cardData]="card"></app-event-card>
         </ng-container>
         <app-event-card [isButton]="true"></app-event-card>
     </div>
