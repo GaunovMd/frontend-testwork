@@ -32,6 +32,5 @@ export class EventCardComponent {
     if (this.isPreviewMode) {
       return;
     }
-    console.log(' : EventCardComponent -> handleEditCardClick -> void');
   }
 }

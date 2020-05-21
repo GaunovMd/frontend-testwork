@@ -40,7 +40,7 @@ export const homePageEnterActionFailed =
 // Add new event
 export const addNewEventAction = createAction(
   RootActionTypes.AddNewEvent,
-  props<{ objects: IEventCard }>(),
+  props<{ object: IEventCard }>(),
 );
 
 export const addNewEventActionComplete = createAction(

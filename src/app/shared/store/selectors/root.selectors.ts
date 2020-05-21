@@ -24,11 +24,16 @@ export const selectEventCards =
 
 export const selectIsHistoryPageLoading =
   createSelector<IRootSlice, IRootUIState, boolean>(
-    selectRootUI, state => state.eventPageUI.isLoading
+    selectRootUI, state => state.homePageUI.isLoading
   );
 
 export const selectIsEventCardsExist =
   createSelector<IRootSlice, IRootDataState, boolean>(
     selectRootData,
     state => Boolean(state.eventCards && state.eventCards.length)
+  );
+
+export const selectIsEventPageLoading =
+  createSelector<IRootSlice, IRootUIState, boolean>(
+    selectRootUI, state => state.eventPageUI.isLoading
   );

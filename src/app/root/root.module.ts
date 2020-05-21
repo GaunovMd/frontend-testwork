@@ -11,12 +11,14 @@ import { RootComponent } from './containers/root.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddEventPageComponent } from '../event-page/components/add-event-page/add-event-page.component';
 import { EditEventPageComponent } from '../event-page/components/edit-event-page/edit-event-page.component';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { effects } from '../shared/store/effects';
 import { reducers } from '../shared/store/reducers';
+import { localStorageSync } from 'ngrx-store-localstorage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     RootRoutingModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(
+      reducers,
+      { metaReducers }
+    ),
     EffectsModule.forRoot(effects),
     StoreDevtoolsModule.instrument(),
     SharedModule,
@@ -43,3 +48,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   bootstrap: [RootComponent]
 })
 export class RootModule { }
+
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({ keys: ['root'], rehydrate: true })(reducer);
+}

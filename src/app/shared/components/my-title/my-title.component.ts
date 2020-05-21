@@ -16,6 +16,6 @@ export class MyTitleComponent {
   }
 
   onClickBack() {
-    this.location.back();
+    window.location.href = '/home';
   }
 }
