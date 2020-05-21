@@ -1,6 +1,4 @@
 import { ComponentFixture, TestBed, async } from "@angular/core/testing";
-import { Store } from "@ngrx/store";
-import { MockStore } from "@ngrx/store/testing";
 import { configureTestSuite } from "ng-bullet";
 import { configurePropertiesTestBed } from "src/app/shared/properties/_tests/test-bed.setup";
 
@@ -9,8 +7,6 @@ import { AddEventPageComponent } from "./add-event-page.component";
 describe("AddEventPageComponent", () => {
   let component: AddEventPageComponent;
   let fixture: ComponentFixture<AddEventPageComponent>;
-  let store: MockStore<any>;
-  let storeSpy;
 
   configureTestSuite(() => configurePropertiesTestBed({
     declarations: [
@@ -19,9 +15,6 @@ describe("AddEventPageComponent", () => {
   }));
 
   beforeEach(() => {
-    // tslint:disable-next-line: deprecation
-    store = TestBed.get(Store);
-    storeSpy = spyOn(store, "dispatch");
     fixture = TestBed.createComponent(AddEventPageComponent);
     component = fixture.componentInstance;
 

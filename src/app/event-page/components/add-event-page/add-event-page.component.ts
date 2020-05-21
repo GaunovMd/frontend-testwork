@@ -9,8 +9,8 @@ import { addNewEventAction } from "../../../shared/store/actions/root.actions";
 
 @Component({
   selector: "app-add-event-page",
-  templateUrl: "./add-event-page.component.html",
   styleUrls: ["./add-event-page.component.scss"],
+  templateUrl: "./add-event-page.component.html",
 })
 export class AddEventPageComponent implements OnInit {
 
@@ -25,9 +25,9 @@ export class AddEventPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventForm = this.formBuilder.group({
-      name: ["", Validators.required],
       address: ["", Validators.required],
       date: ["", Validators.required],
+      name: ["", Validators.required],
     });
   }
 

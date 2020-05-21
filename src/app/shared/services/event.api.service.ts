@@ -8,15 +8,15 @@ export class EventApiService {
   getAllEvents(): Observable<IEventCard[]> {
     return new Observable((subscriber) => {
       setTimeout(() => subscriber.next([{
-        id: "0",
-        name: "1",
         address: "qew",
         date: new Date(),
+        id: "0",
+        name: "1",
       }, {
-        id: "1",
-        name: "2",
         address: "asd",
         date: new Date(),
+        id: "1",
+        name: "2",
       }]), 3000);
     });
   }

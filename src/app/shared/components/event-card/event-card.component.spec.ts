@@ -1,6 +1,4 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { Store } from "@ngrx/store";
-import { MockStore } from "@ngrx/store/testing";
 import { configureTestSuite } from "ng-bullet";
 
 import { IEventCard } from "../../interfaces/event-card.interface";
@@ -11,16 +9,14 @@ import { EventCardComponent } from "./event-card.component";
 describe("EventCardComponent", () => {
   let component: EventCardComponent;
   let fixture: ComponentFixture<EventCardComponent>;
-  let store: MockStore<any>;
-  let storeSpy;
 
   const currentData = new Date();
 
   const cardData: IEventCard = {
-    id: "1",
-    name: "test",
     address: "test",
     date: currentData,
+    id: "1",
+    name: "test",
   };
 
   configureTestSuite(() => configurePropertiesTestBed({
@@ -30,9 +26,6 @@ describe("EventCardComponent", () => {
   }));
 
   beforeEach(() => {
-    // tslint:disable-next-line: deprecation
-    store = TestBed.get(Store);
-    storeSpy = spyOn(store, "dispatch");
     fixture = TestBed.createComponent(EventCardComponent);
     component = fixture.componentInstance;
     component.cardData = cardData;

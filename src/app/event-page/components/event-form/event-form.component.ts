@@ -2,15 +2,14 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 
 @Component({
-  selector: "app-event-form",
-  templateUrl: "./event-form.component.html",
-  styleUrls: ["./event-form.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: "app-event-form",
+  styleUrls: ["./event-form.component.scss"],
+  templateUrl: "./event-form.component.html",
 })
 export class EventFormComponent {
 
   @Input() eventForm: FormGroup;
 
-  constructor() {
-  }
+  constructor() {}
 }

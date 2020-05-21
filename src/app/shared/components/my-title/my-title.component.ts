@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-my-title",
-  templateUrl: "./my-title.component.html",
-  styleUrls: ["./my-title.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: "app-my-title",
+  styleUrls: ["./my-title.component.scss"],
+  templateUrl: "./my-title.component.html",
 })
 export class MyTitleComponent {
 
@@ -15,7 +15,7 @@ export class MyTitleComponent {
   constructor(private router: Router) {
   }
 
-  onClickBack() {
+  onClickBack(): void {
     this.router.navigate(["/home"]);
   }
 }

@@ -3,6 +3,7 @@ import { Store } from "@ngrx/store";
 import { MockStore } from "@ngrx/store/testing";
 import { configureTestSuite } from "ng-bullet";
 
+import { IRootState } from "../shared/interfaces/state.interface";
 import { configurePropertiesTestBed } from "../shared/properties/_tests/test-bed.setup";
 import { homePageEnterAction } from "../shared/store/actions/root.actions";
 
@@ -11,7 +12,8 @@ import { HomePageComponent } from "./home-page.component";
 describe("HomePageComponent", () => {
   let component: HomePageComponent;
   let fixture: ComponentFixture<HomePageComponent>;
-  let store: MockStore<any>;
+  let store: MockStore<IRootState>;
+    /* tslint:disable:no-unused-variable */
   let storeSpy;
 
   configureTestSuite(() => configurePropertiesTestBed({
@@ -21,7 +23,6 @@ describe("HomePageComponent", () => {
   }));
 
   beforeEach(() => {
-    // tslint:disable-next-line: deprecation
     store = TestBed.get(Store);
     storeSpy = spyOn(store, "dispatch");
     fixture = TestBed.createComponent(HomePageComponent);

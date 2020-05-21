@@ -5,10 +5,10 @@ import { monthNames } from "../../constants/month.constant";
 import { IEventCard } from "../../interfaces/event-card.interface";
 
 @Component({
-  selector: "app-event-card",
-  templateUrl: "./event-card.component.html",
-  styleUrls: ["./event-card.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: "app-event-card",
+  styleUrls: ["./event-card.component.scss"],
+  templateUrl: "./event-card.component.html",
 })
 export class EventCardComponent {
 

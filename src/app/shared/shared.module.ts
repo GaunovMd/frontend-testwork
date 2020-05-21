@@ -13,6 +13,9 @@ import { rootReducer } from "./store/reducers/root.reducers";
   declarations: [
     components,
   ],
+  exports: [
+    components,
+  ],
   imports: [
     CommonModule,
     StoreModule.forFeature(rootStateKey, rootReducer),
@@ -20,14 +23,12 @@ import { rootReducer } from "./store/reducers/root.reducers";
       RootEffects,
     ]),
   ],
-  exports: [
-    components,
-  ],
   providers: [
     EventApiService,
   ],
 })
 export class SharedModule {
+  // tslint:disable-next-line: no-any
   static forRoot(): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
     throw new Error("Method not implemented.");
   }

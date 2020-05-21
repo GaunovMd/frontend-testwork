@@ -20,9 +20,11 @@ import { HeaderComponent } from "./components/header/header.component";
 import { RootComponent } from "./containers/root.component";
 import { RootRoutingModule } from "./root-routing.module";
 
+// tslint:disable-next-line: no-any
 const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 @NgModule({
+  bootstrap: [RootComponent],
   declarations: [
     AddEventPageComponent,
     EditEventPageComponent,
@@ -47,10 +49,10 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     MatProgressSpinnerModule,
   ],
   providers: [],
-  bootstrap: [RootComponent],
 })
 export class RootModule { }
 
+// tslint:disable-next-line: no-any
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({ keys: ["root"], rehydrate: true })(reducer);
 }

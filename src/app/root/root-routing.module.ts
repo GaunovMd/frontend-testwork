@@ -5,7 +5,8 @@ import { AddEventPageComponent } from "../event-page/components/add-event-page/a
 import { EditEventPageComponent } from "../event-page/components/edit-event-page/edit-event-page.component";
 import { HomePageComponent } from "../home-page/home-page.component";
 
-const routes: Routes = [
+    // tslint:disable: object-literal-sort-keys
+    const routes: Routes = [
   {
     path: "home",
     component: HomePageComponent,

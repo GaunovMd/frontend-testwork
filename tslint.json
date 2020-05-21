@@ -41,6 +41,7 @@
       }
     ],
     "strict-boolean-expressions": false,
+    "no-empty": false,
     "no-increment-decrement": false,
     "typedef-whitespace": [
       true,

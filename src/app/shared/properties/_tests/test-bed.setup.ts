@@ -14,6 +14,7 @@ import { reducers } from "../../store/reducers";
 export function configurePropertiesTestBed(config: Partial<TestModuleMetadata>): void {
     TestBed
     .configureTestingModule({
+        declarations: [],
         imports: [
             BrowserModule,
             ReactiveFormsModule,
@@ -23,11 +24,10 @@ export function configurePropertiesTestBed(config: Partial<TestModuleMetadata>):
             FormsModule,
             CommonModule,
         ],
-        declarations: [],
-        schemas: [NO_ERRORS_SCHEMA],
         providers: [
             EventApiService,
         ],
+        schemas: [NO_ERRORS_SCHEMA],
         ...config,
         ...{
             declarations: [
