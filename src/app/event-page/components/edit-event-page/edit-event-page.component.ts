@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-edit-event-page',
-  templateUrl: './edit-event-page.component.html',
-  styleUrls: ['./edit-event-page.component.scss']
+  selector: "app-edit-event-page",
+  templateUrl: "./edit-event-page.component.html",
+  styleUrls: ["./edit-event-page.component.scss"],
 })
 export class EditEventPageComponent {
 

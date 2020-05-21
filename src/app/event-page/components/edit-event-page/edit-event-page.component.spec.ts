@@ -1,14 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from "@angular/core/testing";
 
-import { EditEventPageComponent } from './edit-event-page.component';
+import { EditEventPageComponent } from "./edit-event-page.component";
 
-describe('EditEventPageComponent', () => {
+describe("EditEventPageComponent", () => {
   let component: EditEventPageComponent;
   let fixture: ComponentFixture<EditEventPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditEventPageComponent ]
+      declarations: [ EditEventPageComponent ],
     })
     .compileComponents();
   }));
@@ -19,7 +19,7 @@ describe('EditEventPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

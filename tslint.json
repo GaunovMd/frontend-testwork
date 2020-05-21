@@ -1,89 +1,83 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "array-type": false,
-    "arrow-parens": false,
-    "deprecation": {
-      "severity": "warning"
-    },
-    "component-class-suffix": true,
-    "contextual-lifecycle": true,
-    "directive-class-suffix": true,
-    "directive-selector": [
+    "align": [
       true,
-      "attribute",
-      "app",
-      "camelCase"
+      "parameters"
     ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
-    ],
-    "import-blacklist": [
-      true,
-      "rxjs/Rx"
-    ],
-    "interface-name": false,
-    "max-classes-per-file": false,
+    "import-name": false,
+    "no-consecutive-blank-lines": true,
+    "no-console": [true, "log", "debug", "trace"],
+    "no-unused-variable": true,
     "max-line-length": [
       true,
-      140
+      {
+        "limit": 120,
+        "ignore-pattern": "^import|^export"
+      }
     ],
-    "member-access": false,
     "member-ordering": [
       true,
       {
         "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
+          "public-static-field",
+          "public-instance-field",
+          "private-static-field",
+          "private-instance-field",
+          "public-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
         ]
       }
     ],
-    "no-consecutive-blank-lines": false,
-    "no-console": [
+    "ordered-imports": [
       true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace"
+      {
+        "grouped-imports": true,
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-last"
+      }
     ],
-    "no-empty": false,
-    "no-inferrable-types": [
+    "strict-boolean-expressions": false,
+    "no-increment-decrement": false,
+    "typedef-whitespace": [
       true,
-      "ignore-params"
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
     ],
-    "no-non-null-assertion": true,
-    "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
-    "no-var-requires": false,
-    "object-literal-key-quotes": [
-      true,
-      "as-needed"
-    ],
-    "object-literal-sort-keys": false,
-    "ordered-imports": false,
-    "quotemark": [
-      true,
-      "single"
-    ],
-    "trailing-comma": false,
-    "no-conflicting-lifecycle": true,
-    "no-host-metadata-property": true,
-    "no-input-rename": true,
-    "no-inputs-metadata-property": true,
-    "no-output-native": true,
-    "no-output-on-prefix": true,
-    "no-output-rename": true,
-    "no-outputs-metadata-property": true,
-    "template-banana-in-box": true,
-    "template-no-negated-async": true,
-    "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "no-debugger": true,
+    "no-string-throw": true,
+    "no-redundant-jsdoc": true,
+    "member-access": [true, "no-public"],
+    "interface-name": [true, "always-prefix"],
+    "typedef": [true, "call-signature", "parameter", "property-declaration"],
+    "no-inferrable-types": [true, "ignore-params"],
+    "no-any": true,
+    "ban-types": {
+      "options": [
+        ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
+        ["Function", "Avoid using the `Function` type. Prefer a specific function type, like `() => void`."]
+      ]
+    },
+    "jsdoc-format": [true, "check-multiline-start"],
+    "no-conditional-assignment": true,
+    "no-shadowed-variable": true,
+    "ban-ts-ignore": true
   },
   "rulesDirectory": [
     "codelyzer"

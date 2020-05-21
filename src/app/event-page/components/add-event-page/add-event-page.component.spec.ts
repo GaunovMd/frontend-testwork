@@ -1,12 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Store } from '@ngrx/store';
-import { MockStore } from '@ngrx/store/testing';
-import { configureTestSuite } from 'ng-bullet';
+import { ComponentFixture, TestBed, async } from "@angular/core/testing";
+import { Store } from "@ngrx/store";
+import { MockStore } from "@ngrx/store/testing";
+import { configureTestSuite } from "ng-bullet";
+import { configurePropertiesTestBed } from "src/app/shared/properties/_tests/test-bed.setup";
 
-import { AddEventPageComponent } from './add-event-page.component';
-import { configurePropertiesTestBed } from 'src/app/shared/properties/_tests/test-bed.setup';
+import { AddEventPageComponent } from "./add-event-page.component";
 
-describe('AddEventPageComponent', () => {
+describe("AddEventPageComponent", () => {
   let component: AddEventPageComponent;
   let fixture: ComponentFixture<AddEventPageComponent>;
   let store: MockStore<any>;
@@ -14,14 +14,14 @@ describe('AddEventPageComponent', () => {
 
   configureTestSuite(() => configurePropertiesTestBed({
     declarations: [
-      AddEventPageComponent
+      AddEventPageComponent,
     ],
   }));
 
   beforeEach(() => {
     // tslint:disable-next-line: deprecation
     store = TestBed.get(Store);
-    storeSpy = spyOn(store, 'dispatch');
+    storeSpy = spyOn(store, "dispatch");
     fixture = TestBed.createComponent(AddEventPageComponent);
     component = fixture.componentInstance;
 
@@ -30,29 +30,29 @@ describe('AddEventPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', async(() => {
+  it("should create", async(() => {
     expect(component).toBeTruthy();
   }));
 
-  it('should init', () => {
+  it("should init", () => {
     expect(() => {
       component.ngOnInit();
     }).not.toThrow();
   });
 
-  it('should render form', async(() => {
+  it("should render form", async(() => {
     const content = fixture.debugElement.nativeElement;
 
     fixture.detectChanges();
 
-    expect(content.querySelector('app-event-form')).toBeTruthy();
+    expect(content.querySelector("app-event-form")).toBeTruthy();
   }));
 
-  it('should render button', async(() => {
+  it("should render button", async(() => {
     const content = fixture.debugElement.nativeElement;
 
     fixture.detectChanges();
 
-    expect(content.querySelector('app-my-button')).toBeTruthy();
+    expect(content.querySelector("app-my-button")).toBeTruthy();
   }));
 });

@@ -1,17 +1,18 @@
-import { createAction, props } from '@ngrx/store';
-import { IEventCard } from '../../interfaces/event-card.interface';
+import { createAction, props } from "@ngrx/store";
+
+import { IEventCard } from "../../interfaces/event-card.interface";
 
 export enum RootActionTypes {
 
   // Home page
-  HomePageEnter = '[Home Page] Home Page Enter',
-  HomePageEnterComplete = '[Home Page] Home Page Enter Complete',
-  HomePageEnterFailed = '[Home Page] Home Page Enter Failed',
+  HomePageEnter = "[Home Page] Home Page Enter",
+  HomePageEnterComplete = "[Home Page] Home Page Enter Complete",
+  HomePageEnterFailed = "[Home Page] Home Page Enter Failed",
 
   // Add new event
-  AddNewEvent = '[Event API] Add New Event',
-  AddNewEventComplete = '[Event API] Add New Event Complete',
-  AddNewEventFailed = '[Event API] Add New Event Failed',
+  AddNewEvent = "[Event API] Add New Event",
+  AddNewEventComplete = "[Event API] Add New Event Complete",
+  AddNewEventFailed = "[Event API] Add New Event Failed",
 }
 
 // Home page
@@ -25,7 +26,6 @@ export const homePageEnterActionComplete = createAction(
 
 export const homePageEnterActionFailed =
   createAction(RootActionTypes.HomePageEnterFailed);
-
 
 // Add new event
 export const addNewEventAction = createAction(

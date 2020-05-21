@@ -1,31 +1,31 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from '../home-page/home-page.component';
-import { AddEventPageComponent } from '../event-page/components/add-event-page/add-event-page.component';
-import { EditEventPageComponent } from '../event-page/components/edit-event-page/edit-event-page.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
+import { AddEventPageComponent } from "../event-page/components/add-event-page/add-event-page.component";
+import { EditEventPageComponent } from "../event-page/components/edit-event-page/edit-event-page.component";
+import { HomePageComponent } from "../home-page/home-page.component";
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: "home",
     component: HomePageComponent,
   },
   {
-    path: 'add-event',
+    path: "add-event",
     component: AddEventPageComponent,
   },
   {
-    path: 'edit-event',
+    path: "edit-event",
     component: EditEventPageComponent,
   },
   {
-    path: '**',
-    redirectTo: 'home',
-  }
+    path: "**",
+    redirectTo: "home",
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class RootRoutingModule { }

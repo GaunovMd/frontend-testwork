@@ -1,9 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input, OnChanges, HostBinding, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-my-button',
-  templateUrl: './my-button.component.html',
-  styleUrls: ['./my-button.component.scss'],
+  selector: "app-my-button",
+  templateUrl: "./my-button.component.html",
+  styleUrls: ["./my-button.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MyButtonComponent {

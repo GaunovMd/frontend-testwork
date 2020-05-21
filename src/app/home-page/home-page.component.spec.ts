@@ -1,13 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from "@angular/core/testing";
+import { Store } from "@ngrx/store";
+import { MockStore } from "@ngrx/store/testing";
+import { configureTestSuite } from "ng-bullet";
 
-import { HomePageComponent } from './home-page.component';
-import { MockStore } from '@ngrx/store/testing';
-import { configureTestSuite } from 'ng-bullet';
-import { configurePropertiesTestBed } from '../shared/properties/_tests/test-bed.setup';
-import { Store } from '@ngrx/store';
-import { homePageEnterAction } from '../shared/store/actions/root.actions';
+import { configurePropertiesTestBed } from "../shared/properties/_tests/test-bed.setup";
+import { homePageEnterAction } from "../shared/store/actions/root.actions";
 
-describe('HomePageComponent', () => {
+import { HomePageComponent } from "./home-page.component";
+
+describe("HomePageComponent", () => {
   let component: HomePageComponent;
   let fixture: ComponentFixture<HomePageComponent>;
   let store: MockStore<any>;
@@ -15,14 +16,14 @@ describe('HomePageComponent', () => {
 
   configureTestSuite(() => configurePropertiesTestBed({
     declarations: [
-      HomePageComponent
+      HomePageComponent,
     ],
   }));
 
   beforeEach(() => {
     // tslint:disable-next-line: deprecation
     store = TestBed.get(Store);
-    storeSpy = spyOn(store, 'dispatch');
+    storeSpy = spyOn(store, "dispatch");
     fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
 
@@ -31,25 +32,25 @@ describe('HomePageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it('should init', () => {
+  it("should init", () => {
     expect(() => {
       component.ngOnInit();
     }).not.toThrow();
   });
 
-  it('should dispatch newChargePageEnteredAction', () => {
+  it("should dispatch newChargePageEnteredAction", () => {
     expect(store.dispatch).toHaveBeenCalledWith(homePageEnterAction());
   });
 
-  it('should render event card', async(() => {
+  it("should render event card", async(() => {
     const content = fixture.debugElement.nativeElement;
 
     fixture.detectChanges();
 
-    expect(content.querySelector('app-event-card')).toBeTruthy();
+    expect(content.querySelector("app-event-card")).toBeTruthy();
   }));
 });

@@ -1,6 +1,6 @@
-import { IEventCard } from './event-card.interface';
+import { IEventCard } from "./event-card.interface";
 
-export const rootStateKey = 'root';
+export const rootStateKey = "root";
 
 export interface IRootSlice {
   [rootStateKey]: IRootState;

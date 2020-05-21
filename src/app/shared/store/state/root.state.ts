@@ -1,4 +1,4 @@
-import { IRootState } from '../../interfaces/state.interface';
+import { IRootState } from "../../interfaces/state.interface";
 
 export const initialState: IRootState = {
   ui: {
@@ -8,9 +8,9 @@ export const initialState: IRootState = {
     },
     eventPageUI: {
       isLoading: false,
-    }
+    },
   },
   data: {
     eventCards: [],
-  }
+  },
 };

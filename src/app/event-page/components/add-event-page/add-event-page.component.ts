@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { IAppState } from 'src/app/shared/store/reducers';
-import { addNewEventAction } from '../../../shared/store/actions/root.actions';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { selectIsEventPageLoading } from 'src/app/shared/store/selectors/root.selectors';
-import { IEventCard } from 'src/app/shared/interfaces/event-card.interface';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import { IAppState } from "src/app/shared/store/reducers";
+import { selectIsEventPageLoading } from "src/app/shared/store/selectors/root.selectors";
+
+import { addNewEventAction } from "../../../shared/store/actions/root.actions";
 
 @Component({
-  selector: 'app-add-event-page',
-  templateUrl: './add-event-page.component.html',
-  styleUrls: ['./add-event-page.component.scss']
+  selector: "app-add-event-page",
+  templateUrl: "./add-event-page.component.html",
+  styleUrls: ["./add-event-page.component.scss"],
 })
 export class AddEventPageComponent implements OnInit {
 
@@ -25,9 +25,9 @@ export class AddEventPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      address: ['', Validators.required],
-      date: ['', Validators.required],
+      name: ["", Validators.required],
+      address: ["", Validators.required],
+      date: ["", Validators.required],
     });
   }
 
@@ -37,7 +37,7 @@ export class AddEventPageComponent implements OnInit {
         object: {
           ...this.eventForm.value,
           id: Math.random().toString(36).substring(2, 15),
-        }
+        },
       }));
     }
   }

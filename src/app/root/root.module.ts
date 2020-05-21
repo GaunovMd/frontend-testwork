@@ -1,22 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { RootRoutingModule } from './root-routing.module';
-import { HomePageComponent } from '../home-page/home-page.component';
-import { EventFormComponent } from '../event-page/components/event-form/event-form.component';
-import { SharedModule } from '../shared/shared.module';
-import { RootComponent } from './containers/root.component';
-import { HeaderComponent } from './components/header/header.component';
-import { AddEventPageComponent } from '../event-page/components/add-event-page/add-event-page.component';
-import { EditEventPageComponent } from '../event-page/components/edit-event-page/edit-event-page.component';
-import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { effects } from '../shared/store/effects';
-import { reducers } from '../shared/store/reducers';
-import { localStorageSync } from 'ngrx-store-localstorage';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { EffectsModule } from "@ngrx/effects";
+import { ActionReducer, MetaReducer, StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { localStorageSync } from "ngrx-store-localstorage";
+
+import { AddEventPageComponent } from "../event-page/components/add-event-page/add-event-page.component";
+import { EditEventPageComponent } from "../event-page/components/edit-event-page/edit-event-page.component";
+import { EventFormComponent } from "../event-page/components/event-form/event-form.component";
+import { HomePageComponent } from "../home-page/home-page.component";
+import { SharedModule } from "../shared/shared.module";
+import { effects } from "../shared/store/effects";
+import { reducers } from "../shared/store/reducers";
+
+import { HeaderComponent } from "./components/header/header.component";
+import { RootComponent } from "./containers/root.component";
+import { RootRoutingModule } from "./root-routing.module";
 
 const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
@@ -36,7 +38,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     RootRoutingModule,
     StoreModule.forRoot(
       reducers,
-      { metaReducers }
+      { metaReducers },
     ),
     EffectsModule.forRoot(effects),
     StoreDevtoolsModule.instrument(),
@@ -45,10 +47,10 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     MatProgressSpinnerModule,
   ],
   providers: [],
-  bootstrap: [RootComponent]
+  bootstrap: [RootComponent],
 })
 export class RootModule { }
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
-  return localStorageSync({ keys: ['root'], rehydrate: true })(reducer);
+  return localStorageSync({ keys: ["root"], rehydrate: true })(reducer);
 }

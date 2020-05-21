@@ -1,14 +1,15 @@
-import { TestBed, TestModuleMetadata } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { EventApiService } from '../../services/event.api.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-import { CommonModule } from '@angular/common';
-import { effects } from '../../store/effects';
-import { reducers } from '../../store/reducers';
-import { RootModule } from 'src/app/root/root.module';
+import { CommonModule } from "@angular/common";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { TestBed, TestModuleMetadata } from "@angular/core/testing";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from "@ngrx/store";
+import { RootModule } from "src/app/root/root.module";
+
+import { EventApiService } from "../../services/event.api.service";
+import { effects } from "../../store/effects";
+import { reducers } from "../../store/reducers";
 
 export function configurePropertiesTestBed(config: Partial<TestModuleMetadata>): void {
     TestBed
@@ -31,7 +32,7 @@ export function configurePropertiesTestBed(config: Partial<TestModuleMetadata>):
         ...{
             declarations: [
                 ...config.declarations,
-            ]
-        }
+            ],
+        },
     });
 }

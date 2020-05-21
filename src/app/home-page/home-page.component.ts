@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { IEventCard } from '../shared/interfaces/event-card.interface';
-import { IAppState } from '../shared/store/reducers';
-import { selectEventCards, selectIsHistoryPageLoading } from '../shared/store/selectors/root.selectors';
-import { homePageEnterAction } from '../shared/store/actions/root.actions';
+import { Component, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+
+import { IEventCard } from "../shared/interfaces/event-card.interface";
+import { homePageEnterAction } from "../shared/store/actions/root.actions";
+import { IAppState } from "../shared/store/reducers";
+import { selectEventCards, selectIsHistoryPageLoading } from "../shared/store/selectors/root.selectors";
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: "app-home-page",
+  templateUrl: "./home-page.component.html",
+  styleUrls: ["./home-page.component.scss"],
 })
 export class HomePageComponent implements OnInit {
 

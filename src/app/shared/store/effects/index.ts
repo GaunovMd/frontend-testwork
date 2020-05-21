@@ -1,3 +1,3 @@
-import { RootEffects } from './root.effects';
+import { RootEffects } from "./root.effects";
 
 export const effects = [RootEffects];
