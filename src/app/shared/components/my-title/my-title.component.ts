@@ -1,5 +1,5 @@
-import { Location } from '@angular/common';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-title',
@@ -10,12 +10,12 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 export class MyTitleComponent {
 
   @Input() titleText: string;
-  @Input() isHaveBackButton = false;
+  @Input() displayBackButton = false;
 
-  constructor(private location: Location) {
+  constructor(private router: Router) {
   }
 
   onClickBack() {
-    window.location.href = '/home';
+    this.router.navigate(['/home']);
   }
 }

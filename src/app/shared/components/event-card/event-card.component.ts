@@ -1,6 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { IEventCard } from '../../interfaces/event-card.interface';
 import { monthNames } from '../../constants/month.constant';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-card',
@@ -14,7 +15,9 @@ export class EventCardComponent {
   @Input() isButton = false;
   @Input() isPreviewMode = false;
 
-  constructor() { }
+  picUrl = 'https://ngrx.io/assets/images/badge.svg';
+
+  constructor(private router: Router) { }
 
   getHumanDate(date: Date): string {
     if (date) {
@@ -25,12 +28,6 @@ export class EventCardComponent {
   }
 
   handleAddNewCardClick(): void {
-    window.location.href = '/add-event';
-  }
-
-  handleCardClick(): void {
-    if (this.isPreviewMode) {
-      return;
-    }
+    this.router.navigate(['/add-event']);
   }
 }

@@ -13,4 +13,4 @@ export const initialState: IRootState = {
   data: {
     eventCards: [],
   }
-}
+};

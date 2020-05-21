@@ -9,12 +9,6 @@ import {
   addNewEventAction,
   addNewEventActionComplete,
   addNewEventActionFailed,
-  editEventPageEnterAction,
-  editEventPageEnterActionComplete,
-  editEventPageEnterActionFailed,
-  editEventAction,
-  editEventActionFailed,
-  editEventActionComplete
 } from '../actions/root.actions';
 import { IEventCard } from '../../interfaces/event-card.interface';
 
@@ -71,53 +65,4 @@ const reducer = createReducer<IRootState>(
       .set(state => state.ui.eventPageUI.isLoading, false)
       .end(),
   ),
-
-
-  // Edit event page
-  on(
-    editEventPageEnterAction,
-    oldState => set(oldState)
-      .set(state => state.ui.eventPageUI.isLoading, true)
-      .end(),
-  ),
-
-  on(
-    editEventPageEnterActionComplete,
-    (oldState, eventCards: { objects: IEventCard[] }) => set(oldState)
-      .set(state => state.data.eventCards,
-        eventCards.objects ? eventCards.objects : oldState.data.eventCards)
-      .set(state => state.ui.eventPageUI.isLoading, false)
-      .end(),
-  ),
-
-  on(
-    editEventPageEnterActionFailed,
-    oldState => set(oldState)
-      .set(state => state.ui.eventPageUI.isLoading, false)
-      .end(),
-  ),
-
-
-  // Edit event
-  on(
-    editEventAction,
-    oldState => set(oldState)
-    .set(state => state.ui.eventPageUI.isLoading, true)
-    .end(),
-  ),
-
-  on(
-    editEventActionComplete,
-    (oldState, eventCards: { objects: IEventCard[] }) => set(oldState)
-    .set(state => state.data.eventCards, eventCards.objects)
-    .set(state => state.ui.eventPageUI.isLoading, false)
-    .end(),
-  ),
-
-  on(
-    editEventActionFailed,
-    oldState => set(oldState)
-    .set(state => state.ui.eventPageUI.isLoading, false)
-    .end(),
-  )
 );

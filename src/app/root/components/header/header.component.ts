@@ -10,7 +10,7 @@ export class HeaderComponent {
 
   constructor(private router: Router) { }
 
-  whatIsUrl(inputUrl: string): boolean {
+  compareCurrentUrl(inputUrl: string): boolean {
     return this.router.url === `/${inputUrl}`;
   }
 }

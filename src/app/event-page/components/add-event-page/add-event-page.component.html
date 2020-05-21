@@ -1,8 +1,8 @@
-<app-my-title [titleText]="'Add event'" [isHaveBackButton]="true"></app-my-title>
+<app-my-title titleText="Add event" [displayBackButton]="true"></app-my-title>
 <div class="add-event-container">
-    <div class="spinner" *ngIf="(isLoading$ | async)">
-        <mat-spinner></mat-spinner>
-    </div>
-    <app-event-form [eventForm]="eventForm"></app-event-form>
-    <app-my-button [label]="'Add'" [isDisabled]="eventForm.invalid" (click)="submitForm()"></app-my-button>
+  <div class="spinner" *ngIf="(isLoading$ | async)">
+    <mat-spinner></mat-spinner>
+  </div>
+  <app-event-form [eventForm]="eventForm"></app-event-form>
+  <app-my-button label="Add" [isDisabled]="eventForm.invalid" (click)="submitForm()"></app-my-button>
 </div>

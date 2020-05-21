@@ -11,7 +11,7 @@ export class EventApiService {
         name: '1',
         address: 'qew',
         date: new Date(),
-      },{
+      }, {
         id: '1',
         name: '2',
         address: 'asd',
@@ -21,12 +21,6 @@ export class EventApiService {
   }
 
   addEvent(eventCard: IEventCard): Observable<void> {
-    return new Observable(subscriber => {
-      setTimeout((() => subscriber.next()), 3000);
-    });
-  }
-
-  editEvent(eventCard: IEventCard): Observable<void> {
     return new Observable(subscriber => {
       setTimeout((() => subscriber.next()), 3000);
     });
