@@ -1,4 +1,4 @@
-<form [formGroup]="eventForm" class="event-form">
+<form *ngIf="eventForm" [formGroup]="eventForm" class="event-form">
   <div class="form">
     <div class="form-input">
       <div class="title">
